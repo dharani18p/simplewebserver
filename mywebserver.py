@@ -13,7 +13,7 @@ content = """
 class myhandler(BaseHTTPRequestHandler):
     def do_GET(self):
         print("request receviced")
-        self.send_respone(200)
+        self.send_response(200)
         self.send_header('content-type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())

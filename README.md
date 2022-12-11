@@ -27,7 +27,7 @@ Serving the HTML pages.
 Testing the webserver
 
 ## PROGRAM:
-```
+ ```
 from http.server import HTTPServer, BaseHTTPRequestHandler
 content = """
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ content = """
 class myhandler(BaseHTTPRequestHandler):
     def do_GET(self):
         print("request receviced")
-        self.send_respone(200)
+        self.send_response(200)
         self.send_header('content-type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())
@@ -51,8 +51,18 @@ server_address = ('',8080)
 httpd = HTTPServer(server_address, myhandler)
 print("my webserver is running...")
 httpd.serve_forever()
- ```
+```
 ## OUTPUT:
 
+### Server Side Output
+
+![Server Side Output](./images/serveroutput.png)
+
+### Client Side Output 
+
+![Client Side Output](/images/clientoutput.png)
+
 ## RESULT:
+
+thus the websever is developed to display about top five programming languages.
 
